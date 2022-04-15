@@ -40,6 +40,6 @@ head(chave)
 popdata=data[,c(2:5,9,11:16)]
 head(popdata)
 
-setwd("/Users/christiellyborges/Library/Mobile Documents/com~apple~CloudDocs/Em-busca-do-PhD/Languages/Data/Data-ready")
+setwd("/Data/Data-ready")
 write.table(popdata,"Binford-population.txt",row.names = F)
 
