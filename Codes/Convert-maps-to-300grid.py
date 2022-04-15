@@ -5,7 +5,7 @@ Created on Sat Mar 27 16:55:47 2021
 
 @author: christiellyborges
 
-    thanks to https://gist.github.com/michellemho/43e817e8e85c2246d75c40277b7a4968
+### thanks to https://gist.github.com/michellemho/43e817e8e85c2246d75c40277b7a4968
 """
 
 import pandas as pd
@@ -18,7 +18,7 @@ from shapely import wkt
 
 ### import 300km2 grid ###
 
-path_grid="/Users/christiellyborges/Library/Mobile Documents/com~apple~CloudDocs/Em-busca-do-PhD/Languages/Data/LatinAmerica/"
+path_grid="/Data/LatinAmerica/"
 grid300=gpd.read_file(os.path.join(path_grid, "Grid_style.shp"))
 grid300.crs
 
@@ -27,7 +27,7 @@ grid300.crs
 ### rain data ###
 ######################
 
-rain_grid="/Users/christiellyborges/Library/Mobile Documents/com~apple~CloudDocs/Em-busca-do-PhD/Languages/Data/Data-ready/"
+rain_grid="Data/Data-ready/"
 rain=gpd.read_file(os.path.join(rain_grid, "LA-HexicRain.shp", ))
 obs_shp = rain
 
@@ -50,7 +50,7 @@ grid_obs.to_file(os.path.join(rain_grid, "Rain-300g.shp"))
 ### observed data ###
 ######################
 
-path_obs = '/Users/christiellyborges/Library/Mobile Documents/com~apple~CloudDocs/Em-busca-do-PhD/Languages/Results/Layers/'
+path_obs = '/Results/Layers/'
 obs_shp = gpd.read_file(os.path.join(path_obs,"Lang-obs.shp"))
 obs_shp.crs == grid300.crs
 
@@ -84,7 +84,7 @@ grid_obs.to_file(os.path.join(path_obs, "OBS-Rich.shp"))
 ### predicted data ###
 ######################
 
-path_mod = '/Users/christiellyborges/Library/Mobile Documents/com~apple~CloudDocs/Em-busca-do-PhD/Languages/Results/'
+path_mod = '/Results/'
 
 #####  save the best models ##
 total_lang = pd.read_csv(os.path.join(path_mod,"Total_Lang_2trial.csv"))
@@ -158,7 +158,7 @@ for j in range(len(mod_list)):
 #### language family ####
 ######################
 
-path_obs = '/Users/christiellyborges/Library/Mobile Documents/com~apple~CloudDocs/Em-busca-do-PhD/Languages/Data/Data-ready/'
+path_obs = '/Data/Data-ready/'
 obs_shp = gpd.read_file(os.path.join(path_obs,"Family-LA.shp"))
 obs_shp.crs == grid300.crs
 
